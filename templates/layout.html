@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='packing.css') }}">
+    <title>{% block title %}{% endblock %} - My Webpage</title>
+    {% endblock %}
+  </head>
+<body>
+  <header>{% block header %}{% endblock %}</header>
+  <div id="content">{% block content %}{% endblock %}</div>
+  <footer>
+    {% block footer %}
+    &copy; Copyright 2012 by <a href="http://www.mitgr81.com/">Chris McGraw</a>!
+    {% endblock %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.js' )}}"></script>
+    <script src="{{ url_for('static', filename='packing.js' )}}"></script>
+  </footer>
+</body>
