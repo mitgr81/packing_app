@@ -1,13 +1,12 @@
 from flask import Flask, render_template
 
 application = Flask(__name__)
-application.debug = True
 
 
 @application.route('/')
-@application.route('/<beans>')
-def index(beans=None):
-    return render_template('index.html', beans=beans)
+@application.route('/<list_id>')
+def index(list_id=None):
+    return render_template('index.html', title=list_id or 'Manager')
 
 if __name__ == '__main__':
     application.run(debug=True)
