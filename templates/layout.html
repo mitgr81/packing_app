@@ -4,7 +4,7 @@
     {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='packing.css') }}">
-    <title>{% block title %}{% endblock %}Packing List {{ title }}</title>
+    <title>{% block title %}{% endblock %}{{ title }}</title>
     {% endblock %}
   </head>
 <body>
