@@ -3,6 +3,10 @@
 <h1>Eeerp</h1>
 {% if title %}
   <h1>Hello {{ title }}, how's it going</h1>
+<!--   {% for item in range(4) %}
+    [Pants]
+  {% endfor %}
+ --><br/>
   <a href="{{ url_for('create_list')}}">Create List</a>
 {% endif %}
 {% endblock %}
