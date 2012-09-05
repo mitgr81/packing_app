@@ -29,5 +29,14 @@ def verify_page(step, title):
 @step('I enter "([^"]*)" in the ([^"]*) ([^"]*) field')
 def type_in_field(step, text, qualifier, type):
     element = tester.browser.find_element_by_xpath("//input")
-    pdb.set_trace()
     element.send_keys(text)
+
+
+@step(u'I click the "([^"]*)" button')
+def click_button(step, title):
+    tester.click(title)
+
+
+@step(u'I see the text "([^"]*)"')
+def verify_text_present(step, text):
+    tester.browser.find_element_by_xpath("//*[contains(., '%s')]" % text)

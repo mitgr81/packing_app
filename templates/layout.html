@@ -9,6 +9,15 @@
   </head>
 <body>
   <header>{% block header %}{% endblock %}</header>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  {% endwith %}
   <div id="content">{% block content %}{% endblock %}</div>
   <footer>
     {% block footer %}

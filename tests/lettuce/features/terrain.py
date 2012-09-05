@@ -1,5 +1,6 @@
 from selenium import webdriver
 
+
 class Tester(object):
 
     def __init__(self):
@@ -33,6 +34,8 @@ class Tester(object):
         try:
             element = self.browser.find_element_by_partial_link_text(text)
         except:
-            raise AssertionError("Could not find anything to click on with label %s" % text)
+            try:
+                element = self.browser.find_element_by_css_selector('*[title=%s]' % text)
+            except:
+                raise AssertionError("Could not find anything to click on with label %s" % text)
         element.click()
-        

@@ -1,7 +1,7 @@
 PIP_EXEC?=pip
 
 python_deps:
-	@sudo ${PIP_EXEC} install -U nose python-rest-client pika pyyaml pybrightcove
+	@sudo ${PIP_EXEC} install -Ur requirements.txt
 
 clean:
 	@printf "Cleaning up files that are already in .gitignore... "
